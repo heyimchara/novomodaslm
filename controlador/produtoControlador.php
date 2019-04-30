@@ -1,5 +1,7 @@
 <?php
 
+require_once 'servico/validacaoServico.php';
+
 function visualizar (){
     $visualizar = array();
     $visualizar["nomeProd"] = "Moletom";
@@ -16,7 +18,12 @@ function adicionar(){
        $quantidade = $_POST["quantidade"];
        $preco = $_POST["preco"];
        
-       print_r($_POST);
+       echo valida_nao_vazio($nome);
+       echo valida_nao_vazio($descricao);
+       echo valida_nao_vazio_tipoEs($quantidade);
+       echo valida_nao_vazio_tipoEs($preco);
+       
+    
    }else{
        exibir("produto/formulario");
    } 

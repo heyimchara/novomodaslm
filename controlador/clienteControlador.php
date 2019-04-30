@@ -1,5 +1,7 @@
 <?php
 
+require_once 'servico/validacaoServico.php';
+
 function cadastro(){
     if (ehPost()){
        $nome = $_POST["nome"];
@@ -9,8 +11,13 @@ function cadastro(){
        $email = $_POST["email"];
        $senha = $_POST["senha"];
        $senhaRep = $_POST["senhaRepetir"];
-       
-       print_r($_POST);
+      
+       echo valida_nao_vazio($nome);
+       echo valida_nao_vazio_tipoEs($cpf);
+       echo valida_nao_vazio($email);
+       echo valida_nao_vazio_tipoEs($tel);
+     
+      
    }else{
        exibir("cliente/cadastro");
    } 
@@ -23,7 +30,11 @@ function contato(){
         $email = $_POST["email"];
         $mensagem = $_POST["mens"];
         
-        print_r($_POST);
+        echo valida_nao_vazio($nome);
+       echo valida_nao_vazio($email);
+       echo valida_nao_vazio_tipoEs($telefone);
+      
+       
     }else{
         exibir("cliente/contato");
     }
