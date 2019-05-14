@@ -1,6 +1,7 @@
 <?php
 
 require_once 'servico/validacaoServico.php';
+require_once 'modelo/cadastroprodutoModelo.php';
 
 function visualizar (){
     $visualizar = array();
@@ -18,16 +19,21 @@ function adicionar(){
        $quantidade = $_POST["quantidade"];
        $preco = $_POST["preco"];
        
+       $mensagem = adicionarProduto($nome,$quantidade,$descricao,$preco);
+        echo $mensagem; 
+       
        echo valida_nao_vazio($nome);
        echo valida_nao_vazio($descricao);
        echo valida_nao_vazio_tipoEs($quantidade);
        echo valida_nao_vazio_tipoEs($preco);
-       
+    
+      
+        
     
    }else{
-       exibir("produto/formulario");
+       
    } 
-}
+}exibir("produto/formulario");
 
 ?>
 

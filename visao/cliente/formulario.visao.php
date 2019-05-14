@@ -11,13 +11,15 @@ and open the template in the editor.
     </head>
     <body>
         <form action="" method="POST">
+            
             Nome: <input type="text" name="nome"><br><br>
-            Descricao: <input type="text" name="descricao"><br><br>
-            Quantidade: <input type="text" name="quantidade"><br><br>
-            Preço: <input type="text" name="preco"><br><br>
+            Email: <input type="text" name="email"><br><br>
+            Senha: <input type="password" name="senha">
             
             <button>Enviar</button>
             
+            
         </form>
+            
     </body>
 </html>

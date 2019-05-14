@@ -14,7 +14,7 @@ and open the template in the editor.
             
             Nome: <input type="text" name="nome"><br><br>
             CPF: <input type="text" name="cpf"><br><br>
-            Telefone: <input type="text" name="telefone"><br><br>
+            Telefone: <input type="text" name="tel"><br><br>
             Sexo: <select name="sexo"><br><br>
                 <option value="f"></option>
                 <option value="f">Feminino</option>
