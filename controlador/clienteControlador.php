@@ -2,7 +2,7 @@
 
 require_once 'servico/validacaoServico.php';
 require_once 'modelo/clienteModelo.php';
-require_once 'modelo/cadastroclienteModlo.php';
+require_once 'modelo/cadastroclienteModelo.php';
 
 function cadastro(){
     if (ehPost()){
@@ -16,11 +16,14 @@ function cadastro(){
       
        echo valida_nao_vazio($nome);
        echo valida_nao_vazio_tipoEs($cpf);
-       echo valida_nao_vazio($email);
+       
        echo valida_nao_vazio_tipoEs($tel);
+        echo vali_email($email);
        
        $mensagem = adicionarCadastro($nome,$cpf,$senha,$email,$tel);
         echo $mensagem;
+        
+        
      
       
    }else{
@@ -36,8 +39,9 @@ function contato(){
         $mensagem = $_POST["mens"];
         
         echo valida_nao_vazio($nome);
-       echo valida_nao_vazio($email);
+      
        echo valida_nao_vazio_tipoEs($telefone);
+        echo vali_email($email);
       
        
     }else{
@@ -55,11 +59,18 @@ function adicionar(){
         echo $mensagem;
         
         echo valida_nao_vazio($nome);
-       echo valida_nao_vazio($email);
+       
+        echo vali_email($email);
         
     }else{
        
     }
     exibir("cliente/formulario");
+}
+
+function listarClientes(){
+    $dados = array();
+    $dados["clientes"] = pegarTodosClientes();
+    exibir("cliente/listar", $dados);
 }
 

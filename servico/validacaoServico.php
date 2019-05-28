@@ -19,6 +19,14 @@ if ($input['valor'] == FALSE) {
     
 }
 
+function vali_email($email){
+   $input['$email'] = filter_var($email, FILTER_SANITIZE_EMAIL);
+     if ($input['$email'] == FALSE) {
+    return 'Informe um email válido.';
+}
+}
+
+
 
 
 ?>

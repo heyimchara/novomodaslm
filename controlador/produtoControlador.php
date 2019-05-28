@@ -33,7 +33,14 @@ function adicionar(){
    }else{
        
    } 
-}exibir("produto/formulario");
+  exibir("produto/formulario");
+}
+
+function listarProdutos(){
+    $dados = array();
+    $dados["produtos"] = pegarTodosProdutos();
+    exibir("produto/listar", $dados);
+}
 
 ?>
 
