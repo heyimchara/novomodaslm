@@ -22,10 +22,20 @@ function adicionar(){
        $mensagem = adicionarProduto($nome,$quantidade,$descricao,$preco);
         echo $mensagem; 
        
-       echo valida_nao_vazio($nome);
-       echo valida_nao_vazio($descricao);
-       echo valida_nao_vazio_tipoEs($quantidade);
-       echo valida_nao_vazio_tipoEs($preco);
+       if (valida_nao_vazio($nome) != NULL){
+          $erros[]= "Você deve inserir um valor.";    
+      }
+       if (valida_nao_vazio($descricao) != NULL){
+          $erros[]= "Você deve inserir um valor.";    
+      }
+      if (valida_nao_vazio_tipoEs($preco) != NULL){
+          $erros[]= "Informe um valor valido.";    
+      }
+      if (valida_nao_vazio_tipoEs($quantidade) != NULL){
+          $erros[]= "Informe um valor valido.";    
+      }
+       
+    
     
       
         

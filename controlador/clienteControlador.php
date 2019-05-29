@@ -9,22 +9,28 @@ function cadastro(){
        $nome = $_POST["nome"];
        $cpf = $_POST["cpf"];
        $tel = $_POST["tel"];
-       $sexo = $_POST["sexo"];
        $email = $_POST["email"];
        $senha = $_POST["senha"];
        
-      
-       echo valida_nao_vazio($nome);
-       echo valida_nao_vazio_tipoEs($cpf);
+      if (valida_nao_vazio($nome) != NULL){
+          $erros[]= "Você deve inserir um valor.";    
+      }
+      if (valida_nao_vazio_tipoEs($tel) != NULL){
+          $erros[]= "Informe um valor valido.";    
+      }
        
-       echo valida_nao_vazio_tipoEs($tel);
-        echo vali_email($email);
-       
-       $mensagem = adicionarCadastro($nome,$cpf,$senha,$email,$tel);
-        echo $mensagem;
-        
-        
+     if (vali_email($email) != NULL){
+         $erros[]= "Informe um email válido."; 
+     }
      
+     if(count($erros) > 0){
+         $dados = array();
+         $dados["erros"] = $erros;
+         exibir("cliente/cadastro", $dados);
+     }else{
+         $mensagem = adicionarCadastro($nome,$cpf,$senha,$email,$tel);
+        redirecionar("cliente/cadastro");
+     }
       
    }else{
        exibir("cliente/cadastro");
@@ -54,13 +60,23 @@ function adicionar(){
         $nome = $_POST["nome"];
         $email = $_POST["email"];
         $senha = $_POST["senha"];
+        
+        
+        if (valida_nao_vazio($nome) != NULL){
+          $erros[]= "Você deve inserir um valor.";    
+      }
+     
+     if (vali_email($email) != NULL){
+         $erros[]= "Informe um email válido."; 
+     }
+     
+     if (valida_nao_vazio($senha) != NULL){
+          $erros[]= "Você deve inserir um valor.";    
+      }
      
         $mensagem = adicionarCliente($nome,$email,$senha);
         echo $mensagem;
         
-        echo valida_nao_vazio($nome);
-       
-        echo vali_email($email);
         
     }else{
        

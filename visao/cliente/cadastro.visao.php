@@ -10,20 +10,21 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        <?php
+            if(ehPost()){
+                foreach($erros as $erro){
+                    echo "$erro<br>";
+                }
+            }
+        ?>
         <form action="" method="POST">
             
             Nome: <input type="text" name="nome"><br><br>
             CPF: <input type="text" name="cpf"><br><br>
             Telefone: <input type="text" name="tel"><br><br>
-            Sexo: <select name="sexo"><br><br>
-                <option value="f"></option>
-                <option value="f">Feminino</option>
-                <option value="m">Masculino</option>
-                <option value="o">Outro</option>
-            </select>
             Email: <input type="text" name="email"><br><br>
             Senha: <input type="password" name="senha"><br><br>
-            Repetir Senha: <input type="password" name="senhaRepetir"><br><br>
+           
             
             <button>Enviar</button>
             

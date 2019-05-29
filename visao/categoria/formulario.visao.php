@@ -10,9 +10,14 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        <form action="" method="POST">
+            <h1>Cadastrar Categoria</h1>
         
-        Nome: <input type="text" name="nome"><br><br>
-        <button>Enviar</button>
+        Categoria: <input type="text" name="nome"><br><br>
+        <button>Cadastrar</button>
+        
+        </form>
+        
         
         
     </body>
