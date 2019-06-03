@@ -7,16 +7,17 @@ require_once 'modelo/cadastroclienteModelo.php';
 function cadastro(){
     if (ehPost()){
        $nome = $_POST["nome"];
+        
        $cpf = $_POST["cpf"];
        $tel = $_POST["tel"];
        $email = $_POST["email"];
        $senha = $_POST["senha"];
        
-      if (valida_nao_vazio($nome) != NULL){
-          $erros[]= "Você deve inserir um valor.";    
+       if (valida_nao_vazio($nome) != NULL){
+          $erros[]= "Você deve inserir um valor no campo Nome";  
       }
       if (valida_nao_vazio_tipoEs($tel) != NULL){
-          $erros[]= "Informe um valor valido.";    
+          $erros[]= "Informe um valor numérico valido no campo Telefone.";    
       }
        
      if (vali_email($email) != NULL){
@@ -44,15 +45,19 @@ function contato(){
         $email = $_POST["email"];
         $mensagem = $_POST["mens"];
         
-        echo valida_nao_vazio($nome);
+         if (valida_nao_vazio($nome) != NULL){
+          $erros[]= "Você deve inserir um valor no campo Nome";  
+      }
       
-       echo valida_nao_vazio_tipoEs($telefone);
-        echo vali_email($email);
+      if (valida_nao_vazio_tipoEs($tel) != NULL){
+          $erros[]= "Informe um valor numérico valido no campo Telefone.";    
+      }
+        if (vali_email($email) != NULL){
+         $erros[]= "Informe um email válido."; 
+     }
       
        
-    }else{
-        exibir("cliente/contato");
-    }
+   
 }
 
 function adicionar(){
@@ -62,8 +67,8 @@ function adicionar(){
         $senha = $_POST["senha"];
         
         
-        if (valida_nao_vazio($nome) != NULL){
-          $erros[]= "Você deve inserir um valor.";    
+         if (valida_nao_vazio($nome) != NULL){
+          $erros[]= "Você deve inserir um valor no campo Nome";  
       }
      
      if (vali_email($email) != NULL){
