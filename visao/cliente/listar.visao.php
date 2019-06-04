@@ -21,6 +21,7 @@ and open the template in the editor.
                     <th>TEL</th>
                     <th>EMAIL</th>
                     <th>SENHA</th>
+                    <th>Ver Detalhes</th>
                 </tr>
             </thead>
         <?php foreach ($clientes as $cliente): ?> 
@@ -31,6 +32,7 @@ and open the template in the editor.
                 <td><?=$cliente['tel']?></td>
                 <td><?=$cliente['email']?></td>
                 <td><?=$cliente['senha']?></td>
+                <td><a href="./cliente/ver/<?=$cliente['cod_cliente']?>">Ver</a></td>
                 
             </tr>
         <?php endforeach; ?>

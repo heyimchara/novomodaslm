@@ -10,6 +10,7 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        <h2>Cadastrar Produto</h2>
         <form action="" method="POST">
             Nome: <input type="text" name="nome"><br><br>
             Descricao: <input type="text" name="descricao"><br><br>

@@ -25,3 +25,8 @@ function listarCategorias(){
     exibir("categoria/listar", $dados);
 }
 
+function ver($cod_categoria){
+    $dados["categoria"] = pegarCategoriaPorId($cod_categoria);
+    exibir("categoria/visualizar", $dados);
+}
+

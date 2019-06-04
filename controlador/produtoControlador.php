@@ -52,5 +52,10 @@ function listarProdutos(){
     exibir("produto/listar", $dados);
 }
 
+function ver($cod_cadastroproduto){
+    $dados["produto"] = pegarProdutoPorId($cod_cadastroproduto);
+    exibir("produto/visualizar", $dados);
+}
+
 ?>
 

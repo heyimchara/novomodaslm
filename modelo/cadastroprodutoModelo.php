@@ -16,5 +16,16 @@ function pegarTodosProdutos(){
     }
    return $produtos; 
 }
+
+function pegarProdutoPorId($cod_cadastroproduto){
+    $sql = "SELECT * FROM cadastro_produto WHERE cod_cadastroproduto = $cod_cadastroproduto";
+    
+    $resultado = mysqli_query(conn(), $sql);
+    
+    $cadastro_produto = mysqli_fetch_assoc($resultado);
+    
+    return $cadastro_produto;
+}
+
 ?>
   

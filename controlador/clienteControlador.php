@@ -2,7 +2,7 @@
 
 require_once 'servico/validacaoServico.php';
 require_once 'modelo/clienteModelo.php';
-require_once 'modelo/cadastroclienteModelo.php';
+
 
 function cadastro(){
     if (ehPost()){
@@ -12,6 +12,8 @@ function cadastro(){
        $tel = $_POST["tel"];
        $email = $_POST["email"];
        $senha = $_POST["senha"];
+       
+       $erros = array();
        
        if (valida_nao_vazio($nome) != NULL){
           $erros[]= "Você deve inserir um valor no campo Nome";  
@@ -57,41 +59,19 @@ function contato(){
      }
       
        
-   
+    }  
 }
 
-function adicionar(){
-    if (ehPost()){
-        $nome = $_POST["nome"];
-        $email = $_POST["email"];
-        $senha = $_POST["senha"];
-        
-        
-         if (valida_nao_vazio($nome) != NULL){
-          $erros[]= "Você deve inserir um valor no campo Nome";  
-      }
-     
-     if (vali_email($email) != NULL){
-         $erros[]= "Informe um email válido."; 
-     }
-     
-     if (valida_nao_vazio($senha) != NULL){
-          $erros[]= "Você deve inserir um valor.";    
-      }
-     
-        $mensagem = adicionarCliente($nome,$email,$senha);
-        echo $mensagem;
-        
-        
-    }else{
-       
-    }
-    exibir("cliente/formulario");
-}
+
 
 function listarClientes(){
     $dados = array();
     $dados["clientes"] = pegarTodosClientes();
     exibir("cliente/listar", $dados);
+}
+
+function ver($cod_cliente){
+    $dados["cliente"] = pegarUsuarioPorId($cod_cliente);
+    exibir("cliente/visualizar", $dados);
 }
 

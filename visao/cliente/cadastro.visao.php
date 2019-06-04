@@ -10,13 +10,9 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <?php
-            if(ehPost()){
-                foreach($erros as $erro){
-                    echo "$erro<br>";
-                }
-            }
-        ?>
+        
+        <h2>Cadastro</h2>
+        
         <form action="" method="POST">
             
             Nome: <input type="text" name="nome"><br><br>
@@ -27,6 +23,14 @@ and open the template in the editor.
            
             
             <button>Enviar</button>
+            <br><br>            
+            <?php
+            if(ehPost()){
+                foreach($erros as $erro){
+                    echo "$erro<br>";
+                }
+            }
+        ?>
             
         </form>
     </body>

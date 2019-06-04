@@ -11,7 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <form action="" method="POST">
-            <h1>Cadastrar Categoria</h1>
+            <h2>Cadastrar Categoria</h2>
         
         Categoria: <input type="text" name="nome"><br><br>
         <button>Cadastrar</button>

@@ -17,12 +17,14 @@ and open the template in the editor.
                 <tr>
                     <th>COD_CATEGORIA</th>
                     <th>NOME</th>
+                    <th>Ver Categoria</th>
                 </tr>
             </thead>
         <?php foreach ($categorias as $categoria): ?> 
             <tr>
                 <td><?=$categoria['cod_categoria']?></td>
                 <td><?=$categoria['nome']?></td>
+                <td><a href="./categoria/ver/<?=$categoria['cod_categoria']?>">Ver</a></td>
             </tr>
         <?php endforeach; ?>
    </table> 

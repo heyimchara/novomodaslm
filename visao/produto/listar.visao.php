@@ -15,20 +15,18 @@ and open the template in the editor.
    <table class="table">
             <thead>
                 <tr>
-                    <th>COD_CADASTROPRODUTO</th>
+                    
                     <th>NOME</th>
-                    <th>DESCRICAO</th>
-                    <th>QUANTIDADE</th>
-                    <th>PRECO</th>
+                   
+                    <th>Ver Detalhes</th>
                 </tr>
             </thead>
         <?php foreach ($produtos as $produto): ?> 
             <tr>
-                <td><?=$produto['cod_cadastroproduto']?></td>
+               
                 <td><?=$produto['nome']?></td>
-                <td><?=$produto['descricao']?></td>
-                <td><?=$produto['quantidade']?></td>
-                <td><?=$produto['preco']?></td>
+                
+                <td><a href="./produto/ver/<?=$produto['cod_cadastroproduto']?>">Ver</a></td>
             </tr>
         <?php endforeach; ?>
    </table> 

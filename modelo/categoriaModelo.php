@@ -18,3 +18,13 @@ function pegarTodasCategorias(){
    return $categorias; 
 }
 
+function pegarCategoriaPorId($cod_categoria){
+    $sql = "SELECT * FROM categoria WHERE cod_categoria = $cod_categoria";
+    
+    $resultado = mysqli_query(conn(), $sql);
+    
+    $categoria = mysqli_fetch_assoc($resultado);
+    
+    return $categoria;
+}
+

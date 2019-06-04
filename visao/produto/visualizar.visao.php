@@ -10,11 +10,12 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <h1>Produto</h1>
+         <h2>Ver detalhes do produto</h2>
+        <p> Id: <?=$produto['cod_cadastroproduto']?></p>
+        <p> Nome: <?=$produto['nome']?></p>        
+        <p> Descrição: <?=$produto['descricao']?></p>        
+        <p> Quantidade: <?=$produto['quantidade']?></p>       
+        <p> Preço: <?=$produto['preco']?></p>      
        
-        <h4>Nome do Produto: </h4><?=$nomeProd?><br>
-        <h4>Descrição: </h4><?=$descricao?><br>
-        <h4>Preço: </h4><?=$preco?><br>
-        
     </body>
 </html>
