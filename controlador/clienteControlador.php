@@ -7,19 +7,19 @@ require_once 'modelo/clienteModelo.php';
 function cadastro(){
     if (ehPost()){
        $nome = $_POST["nome"];
-        
+        $email = $_POST["email"];
+        $senha = $_POST["senha"];
        $cpf = $_POST["cpf"];
-       $tel = $_POST["tel"];
-       $email = $_POST["email"];
-       $senha = $_POST["senha"];
+       $dataNas = $_POST ["dataNas"];
+       $sexo = $_POST ["sexo"];
+       $tipousuario = $_POST ["tipousuario"];
+      
+       
        
        $erros = array();
        
        if (valida_nao_vazio($nome) != NULL){
           $erros[]= "Você deve inserir um valor no campo Nome";  
-      }
-      if (valida_nao_vazio_tipoEs($tel) != NULL){
-          $erros[]= "Informe um valor numérico valido no campo Telefone.";    
       }
        
      if (vali_email($email) != NULL){
@@ -31,7 +31,7 @@ function cadastro(){
          $dados["erros"] = $erros;
          exibir("cliente/cadastro", $dados);
      }else{
-         $mensagem = adicionarCadastro($nome,$cpf,$senha,$email,$tel);
+         $mensagem = adicionarCadastro($nome,$cpf,$senha,$email,$dataNas,$sexo,$tipousuario);
         redirecionar("cliente/cadastro");
      }
       
@@ -75,3 +75,7 @@ function ver($cod_cliente){
     exibir("cliente/visualizar", $dados);
 }
 
+function deletar($cod_cliente){
+    $msg = deletarCliente($cod_cliente);
+    redirecionar("cliente/listar");
+}

@@ -29,6 +29,14 @@ function pegarUsuarioPorId($cod_cliente){
     return $cliente;
 }
 
+function deletarCliente($cod_cliente){
+    $sql = "DELETE FROM cliente WHERE cod_cliente = cod_cliente";
+    $resultado = mysqli_query($cnx = conn(), $sql);
+    if(!$resultado){
+        die('Erro ao deletar cliente' . mysqli_error($cnx));
+    }
+      return 'Cliente deletado com sucesso!';
+}
 
 ?>
   
