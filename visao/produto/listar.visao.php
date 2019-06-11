@@ -26,7 +26,7 @@ and open the template in the editor.
                
                 <td><?=$produto['nome']?></td>
                 
-                <td><a href="./produto/ver/<?=$produto['cod_cadastroproduto']?>">Ver</a></td>
+                <td><a href="./produto/ver/<?=$produto['cod_produto']?>">Ver</a></td>
             </tr>
         <?php endforeach; ?>
    </table> 

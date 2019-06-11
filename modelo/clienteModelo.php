@@ -1,8 +1,8 @@
 <?php
    
-function adicionarCadastro($nome,$cpf,$senha,$email,$tel){
-    $comando = "INSERT INTO cliente (nome, cpf, senha,email,tel)"
-            . "VALUES ('$nome','$cpf','$senha','$email','$tel')";
+function adicionarCadastro($nome,$cpf,$senha,$email,$sexo,$tipousuario){
+    $comando = "INSERT INTO cliente (nome, cpf, senha, email, sexo, tipousuario, dataNasc)"
+            . "VALUES ('$nome','$cpf','$senha','$email','$sexo','$tipousuario', '1')";
     $resultado = mysqli_query($conexao = conn(), $comando);
     if(!$resultado){ die('Erro no cadastro!' . mysqli_error($conexao));}
     return 'Cadastrado com sucesso!';

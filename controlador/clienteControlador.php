@@ -10,7 +10,6 @@ function cadastro(){
         $email = $_POST["email"];
         $senha = $_POST["senha"];
        $cpf = $_POST["cpf"];
-       $dataNas = $_POST ["dataNas"];
        $sexo = $_POST ["sexo"];
        $tipousuario = $_POST ["tipousuario"];
       
@@ -31,7 +30,7 @@ function cadastro(){
          $dados["erros"] = $erros;
          exibir("cliente/cadastro", $dados);
      }else{
-         $mensagem = adicionarCadastro($nome,$cpf,$senha,$email,$dataNas,$sexo,$tipousuario);
+         $mensagem = adicionarCadastro($nome,$cpf,$senha,$email,$sexo,$tipousuario);
         redirecionar("cliente/cadastro");
      }
       
@@ -46,7 +45,7 @@ function contato(){
         $telefone = $_POST["tel"];
         $email = $_POST["email"];
         $mensagem = $_POST["mens"];
-        
+       
          if (valida_nao_vazio($nome) != NULL){
           $erros[]= "Você deve inserir um valor no campo Nome";  
       }
@@ -77,5 +76,5 @@ function ver($cod_cliente){
 
 function deletar($cod_cliente){
     $msg = deletarCliente($cod_cliente);
-    redirecionar("cliente/listar");
+    redirecionar("cliente/listarClientes");
 }

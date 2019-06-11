@@ -57,7 +57,7 @@ preco DOUBLE NOT NULL,
 nome VARCHAR(30) NOT NULL,
 descricao VARCHAR(60) NOT NULL,
 imagem VARCHAR(60) NOT NULL,
-estoque_minino INT(11),
+estoque_minimo INT(11),
 estoque_maximo INT(11),
 PRIMARY KEY(cod_produto),
 FOREIGN KEY (cod_categoria) REFERENCES categoria (cod_categoria)

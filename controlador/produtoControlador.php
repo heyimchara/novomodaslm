@@ -13,13 +13,13 @@ function visualizar (){
 }
 
 function adicionar(){
+        
    if (ehPost()){
        $nome = $_POST["nome"];
-       $descricao = $_POST["descricao"];
-       $quantidade = $_POST["quantidade"];
        $preco = $_POST["preco"];
+       $descricao = $_POST["descricao"];
        
-       $mensagem = adicionarProduto($nome,$quantidade,$descricao,$preco);
+       $mensagem = adicionarProduto($nome, $descricao, $preco);
         echo $mensagem; 
        
        if (valida_nao_vazio($nome) != NULL){
@@ -31,14 +31,6 @@ function adicionar(){
       if (valida_nao_vazio_tipoEs($preco) != NULL){
           $erros[]= "Informe um valor valido.";    
       }
-      if (valida_nao_vazio_tipoEs($quantidade) != NULL){
-          $erros[]= "Informe um valor valido.";    
-      }
-       
-    
-    
-      
-        
     
    }else{
        
@@ -52,10 +44,11 @@ function listarProdutos(){
     exibir("produto/listar", $dados);
 }
 
-function ver($cod_cadastroproduto){
-    $dados["produto"] = pegarProdutoPorId($cod_cadastroproduto);
-    exibir("produto/visualizar", $dados);
+function deletar($cod){
+    $msg = deletarProduto($cod);
+    redirecionar("produto/listarProdutos");
 }
+
 
 ?>
 

@@ -17,10 +17,6 @@ and open the template in the editor.
                 <tr>
                     <th>COD_CLIENTE</th>
                     <th>NOME</th>
-                    <th>CPF</th>
-                    <th>TEL</th>
-                    <th>EMAIL</th>
-                    <th>SENHA</th>
                     <th>Ver Detalhes</th>
                     <th>Deletar o cliente</th>
                 </tr>
@@ -29,10 +25,6 @@ and open the template in the editor.
             <tr>
                 <td><?=$cliente['cod_cliente']?></td>
                 <td><?=$cliente['nome']?></td>
-                <td><?=$cliente['cpf']?></td>
-                <td><?=$cliente['tel']?></td>
-                <td><?=$cliente['email']?></td>
-                <td><?=$cliente['senha']?></td>
                 <td><a href="./cliente/ver/<?=$cliente['cod_cliente']?>">Ver</a></td>
                  <td><a href="./cliente/deletar/<?=$cliente['cod_cliente']?>">Deletar</a></td>
                 
