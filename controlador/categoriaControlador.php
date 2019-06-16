@@ -7,17 +7,25 @@ function adicionarCategoria(){
     if (ehPost()){
         $nome = $_POST["nome"];
         
-
-        $mensagem = adicionarCategorias($nome);
-        echo $mensagem;
+        $erros = array();
         
-        echo valida_nao_vazio($nome);
+if (valida_nao_vazio($nome) != NULL){
+         $erros[]= "Voce deve inserir um valor!."; 
+     }
      
+if(count($erros) > 0){
+         $dados = array();
+         $dados["erros"] = $erros;
+         exibir("categoria/formulario", $dados);
+     }else{
+         $mensagem = adicionarCategorias($nome);
+        redirecionar("categoria/adicionarCategoria");
+     }
     }else{
-       
-    }
-    exibir("categoria/formulario");
+   exibir("categoria/formulario");  
+     }    
 }
+
 
 function listarCategorias(){
     $dados = array();
@@ -28,5 +36,10 @@ function listarCategorias(){
 function ver($cod_categoria){
     $dados["categoria"] = pegarCategoriaPorId($cod_categoria);
     exibir("categoria/visualizar", $dados);
+}
+
+function deletar($cod_categoria){
+    $msg = deletarCategoria($cod_categoria);
+    redirecionar("categoria/listarCategorias");
 }
 

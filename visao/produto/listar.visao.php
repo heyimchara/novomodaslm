@@ -11,26 +11,25 @@ and open the template in the editor.
     </head>
     <body>
         <h2>Listar Produtos</h2>
-        
+        <br>
    <table class="table">
             <thead>
                 <tr>
-                    
-                    <th>NOME</th>
-                   
+                    <th>Nome</th>
                     <th>Ver Detalhes</th>
+                    <th>Deletar Produto</th>
                 </tr>
             </thead>
         <?php foreach ($produtos as $produto): ?> 
             <tr>
                
                 <td><?=$produto['nome']?></td>
-                
                 <td><a href="./produto/ver/<?=$produto['cod_produto']?>">Ver</a></td>
-            </tr>
+                <td><a href="./produto/deletar/<?=$produto['cod_produto']?>">Deletar</a></td>
+     </tr>
         <?php endforeach; ?>
    </table> 
-        
+        <br>
         <a href="./produto/adicionar" class="btn btn-primary">Novo Produto</a>       
         
     </body>

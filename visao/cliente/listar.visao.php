@@ -18,7 +18,7 @@ and open the template in the editor.
                     <th>COD_CLIENTE</th>
                     <th>NOME</th>
                     <th>Ver Detalhes</th>
-                    <th>Deletar o cliente</th>
+                    <th>Deletar</th>
                 </tr>
             </thead>
         <?php foreach ($clientes as $cliente): ?> 

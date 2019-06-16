@@ -8,7 +8,7 @@ nome varchar(60) not null,
 email varchar(60) not null,
 senha varchar(60) not null,
 cpf varchar(11) not null,
-dataNasc varchar(10) not null,
+dataNasc date not null,
 sexo varchar(60) not null,
 tipousuario varchar(5) not null,
 PRIMARY KEY (cod_cliente)
@@ -53,7 +53,7 @@ primary key(cod_categoria)
 CREATE TABLE produto(
 cod_produto INT(11) unsigned auto_increment NOT NULL,
 cod_categoria INT not null,
-preco DOUBLE NOT NULL,
+preco DOUBLE(10,2) NOT NULL,
 nome VARCHAR(30) NOT NULL,
 descricao VARCHAR(60) NOT NULL,
 imagem VARCHAR(60) NOT NULL,

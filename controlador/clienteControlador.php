@@ -11,6 +11,7 @@ function cadastro(){
         $senha = $_POST["senha"];
        $cpf = $_POST["cpf"];
        $sexo = $_POST ["sexo"];
+       $dataNasc = $_POST ["dataNasc"];
        $tipousuario = $_POST ["tipousuario"];
       
        
@@ -20,7 +21,12 @@ function cadastro(){
        if (valida_nao_vazio($nome) != NULL){
           $erros[]= "Você deve inserir um valor no campo Nome";  
       }
-       
+      if (valida_nao_vazio($sexo) != NULL){
+          $erros[]= "Você deve inserir um valor no campo Sexo";  
+      }
+        if (valida_nao_vazio($dataNasc) != NULL){
+          $erros[]= "Você deve inserir um valor no campo Data de Nascimento";  
+      }
      if (vali_email($email) != NULL){
          $erros[]= "Informe um email válido."; 
      }
@@ -30,7 +36,7 @@ function cadastro(){
          $dados["erros"] = $erros;
          exibir("cliente/cadastro", $dados);
      }else{
-         $mensagem = adicionarCadastro($nome,$cpf,$senha,$email,$sexo,$tipousuario);
+         $mensagem = adicionarCadastro($nome,$cpf,$senha,$email,$sexo,$tipousuario,$dataNasc);
         redirecionar("cliente/cadastro");
      }
       

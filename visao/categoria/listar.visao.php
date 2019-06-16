@@ -18,6 +18,7 @@ and open the template in the editor.
                     <th>COD_CATEGORIA</th>
                     <th>NOME</th>
                     <th>Ver Categoria</th>
+                    <th>Deletar</th>
                 </tr>
             </thead>
         <?php foreach ($categorias as $categoria): ?> 
@@ -25,6 +26,7 @@ and open the template in the editor.
                 <td><?=$categoria['cod_categoria']?></td>
                 <td><?=$categoria['nome']?></td>
                 <td><a href="./categoria/ver/<?=$categoria['cod_categoria']?>">Ver</a></td>
+                <td><a href="./categoria/deletar/<?=$categoria['cod_categoria']?>">Deletar</a></td>
             </tr>
         <?php endforeach; ?>
    </table> 

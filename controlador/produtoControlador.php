@@ -1,7 +1,11 @@
 <?php
 
 require_once 'servico/validacaoServico.php';
-require_once 'modelo/cadastroprodutoModelo.php';
+require_once 'modelo/produtoModelo.php';
+
+function index(){
+    redirecionar("produto/listarProdutos");
+}
 
 function visualizar (){
     $visualizar = array();
@@ -19,23 +23,30 @@ function adicionar(){
        $preco = $_POST["preco"];
        $descricao = $_POST["descricao"];
        
-       $mensagem = adicionarProduto($nome, $descricao, $preco);
-        echo $mensagem; 
+       $erros = array();
        
        if (valida_nao_vazio($nome) != NULL){
-          $erros[]= "Você deve inserir um valor.";    
+          $erros[]= "Você deve inserir um valor no campo Nome.";    
       }
        if (valida_nao_vazio($descricao) != NULL){
-          $erros[]= "Você deve inserir um valor.";    
+          $erros[]= "Você deve inserir um valor no campo Descrição.";    
       }
-      if (valida_nao_vazio_tipoEs($preco) != NULL){
+      if (valida_nao_vazio($preco) != NULL){
           $erros[]= "Informe um valor valido.";    
       }
-    
+      
+      if(count($erros) > 0 ){
+          $dados = array();
+          $dados["erros"] = $erros;
+          exibir("produto/formulario", $dados);
+      }else{
+           $mensagem = adicionarProduto($nome, $descricao, $preco);
+        redirecionar("produto/listarProdutos");
+      }     
    }else{
-       
+      exibir("produto/formulario");
    } 
-  exibir("produto/formulario");
+  
 }
 
 function listarProdutos(){
@@ -44,11 +55,14 @@ function listarProdutos(){
     exibir("produto/listar", $dados);
 }
 
+function ver($cod_produto){
+    $dados["produto"] = pegarProdutoPorId($cod_produto);
+    exibir("produto/visualizar", $dados);
+}
+
 function deletar($cod){
     $msg = deletarProduto($cod);
     redirecionar("produto/listarProdutos");
 }
 
-
 ?>
-

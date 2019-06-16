@@ -14,6 +14,19 @@ and open the template in the editor.
             <h2>Cadastrar Categoria</h2>
         
         Categoria: <input type="text" name="nome"><br><br>
+        
+        
+        
+        <?php
+            if(ehPost()){
+                foreach($erros as $erro){
+                    echo "$erro<br>";
+                }
+            }
+        ?>
+        
+        <br>
+        
         <button>Cadastrar</button>
         
         </form>
