@@ -95,4 +95,3 @@ FOREIGN KEY (id_pedido) REFERENCES pedido (id_pedido)
 ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-

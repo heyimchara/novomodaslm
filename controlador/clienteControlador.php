@@ -13,9 +13,7 @@ function cadastro(){
        $sexo = $_POST ["sexo"];
        $dataNasc = $_POST ["dataNasc"];
        $tipousuario = $_POST ["tipousuario"];
-      
-       
-       
+ 
        $erros = array();
        
        if (valida_nao_vazio($nome) != NULL){
@@ -37,7 +35,7 @@ function cadastro(){
          exibir("cliente/cadastro", $dados);
      }else{
          $mensagem = adicionarCadastro($nome,$cpf,$senha,$email,$sexo,$tipousuario,$dataNasc);
-        redirecionar("cliente/cadastro");
+        redirecionar("cliente/listarClientes");
      }
       
    }else{
@@ -62,12 +60,9 @@ function contato(){
         if (vali_email($email) != NULL){
          $erros[]= "Informe um email válido."; 
      }
-      
-       
+    
     }  
 }
-
-
 
 function listarClientes(){
     $dados = array();
