@@ -65,16 +65,16 @@ ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE estoque(
-idestoque INT(11)  unsigned auto_increment NOT NULL,
-cod_produto INT(11) NOT NULL,
+idestoque INT(11) unsigned auto_increment NOT NULL,
+cod_produto INT(11) unsigned NOT NULL,
 quantidade INT(11),
 PRIMARY KEY(idestoque),
-FOREIGN KEY (cod_produto) REFERENCES produtos (cod_produto)
+FOREIGN KEY (cod_produto) REFERENCES produto (cod_produto)
 ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE pedido(
-id_pedido INT(11)  unsigned auto_increment NOT NULL,
+id_pedido INT(11) unsigned auto_increment NOT NULL,
 cod_cliente INT(11) NOT NULL,
 idEndereco INT(11) NOT NULL,
 datacompra DATE NOT NULL,
@@ -86,8 +86,8 @@ ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE pedido_produto(
-cod_produto INT(11) NOT NULL,
-id_pedido INT(11) NOT NULL,
+cod_produto INT(11) unsigned NOT NULL,
+id_pedido INT(11) unsigned NOT NULL,
 quantidade INT(11) NOT NULL,
 FOREIGN KEY (cod_produto) REFERENCES produto (cod_produto)
 ON DELETE CASCADE ON UPDATE CASCADE,

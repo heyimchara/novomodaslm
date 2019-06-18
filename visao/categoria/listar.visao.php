@@ -30,7 +30,7 @@ and open the template in the editor.
             </tr>
         <?php endforeach; ?>
    </table> 
-        
+        <br>
         <a href="./categoria/adicionarCategoria" class="btn btn-primary">Nova Categoria</a>
     </body>
 </html>

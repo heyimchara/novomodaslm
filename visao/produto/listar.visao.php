@@ -11,7 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <h2>Listar Produtos</h2>
-        <br>
+       
    <table class="table">
             <thead>
                 <tr>
