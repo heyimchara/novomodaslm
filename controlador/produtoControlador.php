@@ -1,6 +1,6 @@
 <?php
-
 require_once 'servico/validacaoServico.php';
+require_once 'modelo/categoriaModelo.php';
 require_once 'modelo/produtoModelo.php';
 
 function index(){
@@ -22,6 +22,10 @@ function adicionar(){
        $nome = $_POST["nome"];
        $preco = $_POST["preco"];
        $descricao = $_POST["descricao"];
+       $cod_categoria = $_POST["cod_categoria"];
+       $imagem = $_POST["imagem"];
+       $estoque_minimo = $_POST["estoque_minimo"];
+       $estoque_maximo = $_POST["estoque_maximo"];
        
        $erros = array();
        
@@ -34,17 +38,27 @@ function adicionar(){
       if (valida_nao_vazio($preco) != NULL){
           $erros[]= "Informe um valor valido.";    
       }
+      if (valida_nao_vazio($imagem) != NULL){
+          $erros[]= "Você deve inserir um valor válido.";    
+      }
+      if (valida_nao_vazio($estoque_minimo) != NULL){
+          $erros[]= "Você deve inserir um valor válido.";    
+      }
+      if (valida_nao_vazio($estoque_maximo) != NULL){
+          $erros[]= "Você deve inserir um valor válido.";    
+      }
       
       if(count($erros) > 0 ){
           $dados = array();
           $dados["erros"] = $erros;
           exibir("produto/formulario", $dados);
       }else{
-           $mensagem = adicionarProduto($nome, $descricao, $preco);
+           $mensagem = adicionarProduto($nome, $descricao, $preco, $cod_categoria, $imagem, $estoque_minimo, $estoque_maximo);
         redirecionar("produto/listarProdutos");
       }     
-   }else{
-      exibir("produto/formulario");
+    }else{
+      $dados["categorias"] = pegarTodasCategorias();
+      exibir("produto/formulario", $dados);
    } 
   
 }
@@ -65,4 +79,22 @@ function deletar($cod){
     redirecionar("produto/listarProdutos");
 }
 
+function editar($cod_produto){
+     if (ehPost()){
+       $nome = $_POST["nome"];
+       $preco = $_POST["preco"];
+       $descricao = $_POST["descricao"];
+       $cod_categoria = $_POST["cod_categoria"];
+       $imagem = $_POST["imagem"];
+       $estoque_minimo = $_POST["estoque_minimo"];
+       $estoque_maximo = $_POST["estoque_maximo"];
+       
+       editarProduto($nome, $descricao, $preco, $cod_categoria, $imagem, $estoque_minimo, $estoque_maximo);
+       redirecionar("produto/listarProdutos");
+} else{
+    $dados["produto"] =  pegarProdutoPorId($cod_produto);
+    $dados["categorias"] = pegarTodasCategorias();
+    exibir("produto/formulario", $dados);
+} 
+}
 ?>
