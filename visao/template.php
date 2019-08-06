@@ -43,7 +43,7 @@
         <a href="./categoria/listarCategorias">Categoria</a>
         <a href="./produto/listarProdutos">Produto</a>
         <a href="./cliente/listarClientes">Cliente</a>
-        <a href="./endereco/listarEnderecos">Cliente</a>
+        <a href="./endereco/listarEnderecos">Endereço</a>
         
         <main class="container">
          
