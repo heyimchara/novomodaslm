@@ -36,7 +36,7 @@ if(count($erros) > 0){
          $dados["erros"] = $erros;
          exibir("endereco/formulario", $dados);
      }else{
-         $mensagem = adicionarEndereco($nome);
+         $mensagem = adicionarEndereco($logradouro,$numero,$complemento, $bairro,$cidade,$cep);
         redirecionar("endereco/listarEnderecos");
      }
     }else{
@@ -50,3 +50,28 @@ function listarEndereco(){
     exibir("enderecos/listar", $dados);
 }
 
+function ver($cod_endereco){
+    $dados["endereco"] = pegarEnderecoPorId($cod_endereco);
+    exibir("endereco/visualizar", $dados);
+}
+
+function deletar($cod_endereco){
+    $msg = deletarEndereco($cod_endereco);
+    redirecionar("endereco/listarEnderecos");
+}
+function editar($idEndereco){
+     if (ehPost()){
+      $logradouro = $_POST["logradouro"];
+        $numero = $_POST["numero"];
+        $complemento = $_POST["complemento"];
+        $bairro = $_POST["bairro"];
+        $cidade = $_POST["cidade"];
+        $cep = $_POST["cep"];
+        
+        editarEndereco($logradouro,$numero,$complemento, $bairro,$cidade,$cep);
+       redirecionar("endereco/listarEndrecos");
+} else{
+    $dados["endereco"] = pegarEnderecoPorId($idEndereco);
+    exibir("endereco/formulario", $dados);
+} 
+}

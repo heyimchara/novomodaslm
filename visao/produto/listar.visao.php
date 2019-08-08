@@ -18,6 +18,7 @@ and open the template in the editor.
                     <th>Nome</th>
                     <th>Ver Detalhes</th>
                     <th>Deletar Produto</th>
+                    <th>Editar Produto</th>
                 </tr>
             </thead>
         <?php foreach ($produtos as $produto): ?> 

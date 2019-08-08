@@ -12,6 +12,7 @@
                     <th>IdEndereco</th>
                     <th>Ver Endereço</th>
                     <th>Deletar</th>
+                    <td>Editar</td>
                 </tr>
             </thead>
         <?php foreach ($enderecos as $endereco): ?> 
@@ -19,6 +20,7 @@
                 <td><?=$categoria['idEndereco']?></td>
                 <td><a href="./endereco/ver/<?=$categoria['idEndereco']?>">Ver</a></td>
                 <td><a href="./endereco/deletar/<?=$categoria['idEndereco']?>">Deletar</a></td>
+                <td><a href="./endereco/editar/<?=$categoria['idEndereco']?>">Editar</a></td>
             </tr>
         <?php endforeach; ?>
    </table> 

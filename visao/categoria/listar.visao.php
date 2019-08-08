@@ -13,6 +13,7 @@
                     <th>NOME</th>
                     <th>Ver Categoria</th>
                     <th>Deletar</th>
+                    <th>Editar</th>
                 </tr>
             </thead>
         <?php foreach ($categorias as $categoria): ?> 
@@ -21,6 +22,7 @@
                 <td><?=$categoria['nome']?></td>
                 <td><a href="./categoria/ver/<?=$categoria['cod_categoria']?>">Ver</a></td>
                 <td><a href="./categoria/deletar/<?=$categoria['cod_categoria']?>">Deletar</a></td>
+                 <td><a href="./categoria/editar/<?=$categoria['cod_categoria']?>">Editar</a></td>
             </tr>
         <?php endforeach; ?>
    </table> 
