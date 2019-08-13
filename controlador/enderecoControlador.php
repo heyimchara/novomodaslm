@@ -1,6 +1,9 @@
 <?php
 
-function adicionarEndereco(){
+require_once 'servico/validacaoServico.php';
+require_once 'modelo/enderecoModelo.php';
+
+function adicionar(){
     if (ehPost()){
         $logradouro = $_POST["logradouro"];
         $numero = $_POST["numero"];
@@ -44,19 +47,19 @@ if(count($erros) > 0){
      }    
 }
 
-function listarEndereco(){
+function listarEnderecos(){
     $dados = array();
     $dados["enderecos"] = pegarTodasEnderecos();
-    exibir("enderecos/listar", $dados);
+    exibir("endereco/listar", $dados);
 }
 
-function ver($cod_endereco){
-    $dados["endereco"] = pegarEnderecoPorId($cod_endereco);
+function ver($idEndereco){
+    $dados["endereco"] = pegarEnderecoPorId($idEndereco);
     exibir("endereco/visualizar", $dados);
 }
 
-function deletar($cod_endereco){
-    $msg = deletarEndereco($cod_endereco);
+function deletar($idEndereco){
+    $msg = deletarEndereco($idEndereco);
     redirecionar("endereco/listarEnderecos");
 }
 function editar($idEndereco){

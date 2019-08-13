@@ -17,7 +17,8 @@
             </thead>
         <?php foreach ($enderecos as $endereco): ?> 
             <tr>
-                <td><?=$categoria['idEndereco']?></td>
+                <td><?=$endereco['idEndereco']?></td>
+                <td><?=$endereco['logradouro']?></td>
                 <td><a href="./endereco/ver/<?=$categoria['idEndereco']?>">Ver</a></td>
                 <td><a href="./endereco/deletar/<?=$categoria['idEndereco']?>">Deletar</a></td>
                 <td><a href="./endereco/editar/<?=$categoria['idEndereco']?>">Editar</a></td>
@@ -25,7 +26,7 @@
         <?php endforeach; ?>
    </table> 
         <br>
-        <a href="./categoria/adicionarCategoria" class="btn btn-primary">Nova Categoria</a>
+        <a href="./endereco/adicionarEndereco" class="btn btn-primary">Novo Endereco</a>
     </body>
 </html>
 

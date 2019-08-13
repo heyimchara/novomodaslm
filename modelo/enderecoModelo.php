@@ -18,8 +18,8 @@ function pegarTodasEnderecos(){
     }
    return $enderecos; 
 }
-function pegarEnderecoPorId($cod_endereco){
-    $sql = "SELECT * FROM endereco WHERE cod_endereco = $cod_endereco";
+function pegarEnderecoPorId($idEndereco){
+    $sql = "SELECT * FROM endereco WHERE idEndereco = $idEndereco";
     
     $resultado = mysqli_query(conn(), $sql);
     
@@ -28,8 +28,8 @@ function pegarEnderecoPorId($cod_endereco){
     return $endereco;
 }
 
-function deletarEndereco($cod_endereco){
-    $sql = "DELETE FROM endereco WHERE cod_endereco = $cod_endereco";
+function deletarEndereco($idEndereco){
+    $sql = "DELETE FROM endereco WHERE idEndereco = $idEndereco";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!resultado){
      die('Erro ao deletar endereco' . mysqli_error($cnx));   

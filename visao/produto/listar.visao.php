@@ -23,7 +23,7 @@ and open the template in the editor.
             </thead>
         <?php foreach ($produtos as $produto): ?> 
             <tr>
-               
+               <td><?=$produto['cod_produto']?></td>
                 <td><?=$produto['nome']?></td>
                 <td><a href="./produto/ver/<?=$produto['cod_produto']?>">Ver</a></td>
                 <td><a href="./produto/deletar/<?=$produto['cod_produto']?>">Deletar</a></td>

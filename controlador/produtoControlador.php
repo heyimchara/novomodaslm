@@ -74,8 +74,8 @@ function ver($cod_produto){
     exibir("produto/visualizar", $dados);
 }
 
-function deletar($cod){
-    $msg = deletarProduto($cod);
+function deletar($cod_produto){
+    $msg = deletarProduto($cod_produto);
     redirecionar("produto/listarProdutos");
 }
 
@@ -89,7 +89,7 @@ function editar($cod_produto){
        $estoque_minimo = $_POST["estoque_minimo"];
        $estoque_maximo = $_POST["estoque_maximo"];
        
-       editarProduto($nome, $descricao, $preco, $cod_categoria, $imagem, $estoque_minimo, $estoque_maximo);
+       editarProduto($cod_produto, $nome, $descricao, $preco, $cod_categoria, $imagem, $estoque_minimo, $estoque_maximo);
        redirecionar("produto/listarProdutos");
 } else{
     $dados["produto"] =  pegarProdutoPorId($cod_produto);
