@@ -2,6 +2,7 @@ CREATE DATABASE basemodaslm;
 
 USE basemodaslm;
 
+
 CREATE TABLE cliente(
 cod_cliente int(11) auto_increment not null,
 nome varchar(60) not null,

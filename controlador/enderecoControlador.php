@@ -49,7 +49,7 @@ if(count($erros) > 0){
 
 function listarEnderecos(){
     $dados = array();
-    $dados["enderecos"] = pegarTodasEnderecos();
+    $dados["enderecos"] = pegarTodosEnderecos();
     exibir("endereco/listar", $dados);
 }
 

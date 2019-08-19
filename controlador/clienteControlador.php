@@ -2,7 +2,7 @@
 
 require_once 'servico/validacaoServico.php';
 require_once 'modelo/clienteModelo.php';
-
+require_once 'modelo/enderecoModelo.php';
 
 function cadastro(){
     if (ehPost()){
@@ -39,6 +39,7 @@ function cadastro(){
      }
       
    }else{
+       
        exibir("cliente/cadastro");
    } 
 }

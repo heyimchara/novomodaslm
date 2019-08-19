@@ -9,7 +9,7 @@ function adicionarEndereco($logradouro,$numero,$complemento, $bairro,$cidade,$ce
     return 'Cadastrado com sucesso!';
 }
 
-function pegarTodasEnderecos(){
+function pegarTodosEnderecos(){
     $sql = "SELECT * FROM endereco";
     $resultado = mysqli_query(conn(),$sql);
     $enderecos = array();
