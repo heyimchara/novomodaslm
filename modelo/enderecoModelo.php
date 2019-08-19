@@ -2,7 +2,7 @@
 
 
 function adicionarEndereco($logradouro,$numero,$complemento, $bairro,$cidade,$cep){
-    $comando = "INSERT INTO categoria (logradouro,numero,complemento, bairro,cidade,cep)"
+    $comando = "INSERT INTO endereco (logradouro,numero,complemento, bairro,cidade,cep)"
             . "VALUES ('$logradouro','$numero','$complemento', '$bairro','$cidade','$cep')";
     $resultado = mysqli_query($conexao = conn(), $comando);
     if(!$resultado){ die('Erro no cadastro!' . mysqli_error($conexao));}
@@ -12,7 +12,7 @@ function adicionarEndereco($logradouro,$numero,$complemento, $bairro,$cidade,$ce
 function pegarTodasEnderecos(){
     $sql = "SELECT * FROM endereco";
     $resultado = mysqli_query(conn(),$sql);
-    $enderecos[] = array();
+    $enderecos = array();
     while ($linha = mysqli_fetch_assoc($resultado)){
         $enderecos[] = $linha;
     }

@@ -15,6 +15,8 @@
                     <td>Editar</td>
                 </tr>
             </thead>
+            
+       
         <?php foreach ($enderecos as $endereco): ?> 
             <tr>
                 <td><?=$endereco['idEndereco']?></td>
@@ -25,7 +27,7 @@
         <?php endforeach; ?>
    </table> 
         <br>
-        <a href="./endereco/adicionarEndereco" class="btn btn-primary">Novo Endereco</a>
+        <a href="./endereco/adicionar" class="btn btn-primary">Novo Endereco</a>
     </body>
 </html>
 
