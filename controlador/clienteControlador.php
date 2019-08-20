@@ -39,7 +39,6 @@ function cadastro(){
      }
       
    }else{
-       
        exibir("cliente/cadastro");
    } 
 }
@@ -91,10 +90,10 @@ function editar($cod_cliente){
        $dataNasc = $_POST ["dataNasc"];
        $tipousuario = $_POST ["tipousuario"];
        
-       editarCliente($nome,$cpf,$senha,$email,$sexo,$tipousuario,$dataNasc);
+       editarCliente($cod_cliente,$nome,$cpf,$senha,$email,$sexo,$tipousuario,$dataNasc);
        redirecionar("cliente/listarClientes");
 } else{
     $dados["cliente"] =  pegarUsuarioPorId($cod_cliente);
-    exibir("cliente/formulario", $dados);
+    exibir("cliente/formulario");
 } 
 }

@@ -8,7 +8,6 @@ function adicionarCadastro($nome,$cpf,$senha,$email,$sexo,$tipousuario,$dataNasc
     return 'Cadastrado com sucesso!';
 }
 
-
 function pegarTodosClientes(){
     $sql = "SELECT * FROM cliente";
     $resultado = mysqli_query(conn(),$sql);
@@ -21,11 +20,8 @@ function pegarTodosClientes(){
 
 function pegarUsuarioPorId($cod_cliente){
     $sql = "SELECT * FROM cliente WHERE cod_cliente = $cod_cliente";
-    
     $resultado = mysqli_query(conn(), $sql);
-    
     $cliente = mysqli_fetch_assoc($resultado);
-    
     return $cliente;
 }
 

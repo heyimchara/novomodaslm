@@ -9,8 +9,8 @@
    <table class="table">
             <thead>
                 <tr>
-                    <th>COD_CATEGORIA</th>
-                    <th>NOME</th>
+                    <th>Cod_categoria</th>
+                    <th>Nome</th>
                     <th>Ver Categoria</th>
                     <th>Deletar</th>
                     <th>Editar</th>
@@ -28,5 +28,11 @@
    </table> 
         <br>
         <a href="./categoria/adicionarCategoria" class="btn btn-primary">Nova Categoria</a>
+        
+        <br><br>
+        
+        
+        <a href="./produto/adicionar">Voltar ao Cadastro do Produto</a>
+        
     </body>
 </html>

@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -15,8 +9,8 @@ and open the template in the editor.
    <table class="table">
             <thead>
                 <tr>
-                    <th>COD_CLIENTE</th>
-                    <th>NOME</th>
+                    <th>Cod_cliente</th>
+                    <th>Nome</th>
                     <th>Ver Detalhes</th>
                     <th>Deletar</th>
                     <th>Editar</th>

@@ -29,6 +29,10 @@
    </table> 
         <br>
         <a href="./endereco/adicionar" class="btn btn-primary">Novo Endereco</a>
+        <br><br>
+        
+        
+        <a href="./cliente/cadastro">Voltar ao Cadastro do Cliente</a>
     </body>
 </html>
 

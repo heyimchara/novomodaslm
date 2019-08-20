@@ -6,7 +6,6 @@ function adicionarProduto($nome,$descricao,$preco,$cod_categoria,$imagem,$estoqu
     $resultado = mysqli_query($conexao = conn(), $comando);
     if(!$resultado){ die('Erro no cadastro!' . mysqli_error($conexao));}
     return 'Cadastrado com sucesso!';
-    
 }
 
 function pegarTodosProdutos(){

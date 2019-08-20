@@ -29,7 +29,9 @@
             
             <br>
             
-            <button>Enviar</button>
+            <button>Enviar</button><br><br>
+            
+            <a href="./categoria/adicionarCategoria">Cadastrar Categoria</a>
         </form>
     </body>
 </html>

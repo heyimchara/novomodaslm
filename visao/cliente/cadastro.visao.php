@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -19,23 +13,16 @@ and open the template in the editor.
             Email: <input type="text" name="email" value="<?=@$cliente['email']?>" ><br><br>
             CPF: <input type="text" name="cpf" value="<?=@$cliente['cpf']?>"><br><br>
             Data de Nascimento: <input type="date" name="dataNasc" value="<?=@$cliente['dataNasc']?>"><br><br>
-            
-  Sexo:   <select name="sexo" value="<?=@$cliente['sexo']?>">
-  <option value=""></option>
-  <option value="F">Feminino</option>
-  <option value="M">Masculino</option>
-  <option value="Outros">Outros</option>
-</select>
-<br><br>
-
-
-            
-            
+            Sexo:   <select name="sexo" value="<?=@$cliente['sexo']?>">
+            <option value=""></option>
+            <option value="F">Feminino</option>
+            <option value="M">Masculino</option>
+            <option value="Outros">Outros</option>
+            </select>
+            <br><br>
             Senha: <input type="password" name="senha" value="<?=@$cliente['senha']?>"><br><br>
             Tipo de usuario: <input type ="text" name="tipousuario" value="<?=@$cliente['tipousuario']?>"><br><br>
-           
-            
-            <button>Enviar</button>
+            <button>Enviar</button><br><br> <a href="./endereco/adicionar">Cadastrar Endereço</a>
             <br><br>            
             <?php
             if(ehPost()){
@@ -43,7 +30,7 @@ and open the template in the editor.
                     echo "$erro<br>";
                 }
             }
-        ?>
+            ?>
             
         </form>
     </body>
