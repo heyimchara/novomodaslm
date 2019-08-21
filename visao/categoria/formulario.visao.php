@@ -1,13 +1,7 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <form action="" method="POST">
+<form action="" method="POST">
             <h2>Cadastrar Categoria</h2>
         
-        Categoria: <input type="text" name="nome"><br><br>
+        Categoria: <input type="text" name="nome" value="<?=@$categoria['nome']?>"><br><br>
         
         <?php
             if(ehPost()){
@@ -23,8 +17,3 @@
         
         
         </form>
-        
-        
-        
-    </body>
-</html>

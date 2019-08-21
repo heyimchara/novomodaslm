@@ -1,10 +1,4 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-          <h2>Listar Endreços</h2>
+<h2>Listar Endreços</h2>
         
    <table class="table">
             <thead>
@@ -33,7 +27,4 @@
         
         
         <a href="./cliente/cadastro">Voltar ao Cadastro do Cliente</a>
-    </body>
-</html>
-
-
+   

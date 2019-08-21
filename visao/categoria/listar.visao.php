@@ -1,10 +1,4 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-          <h2>Listar Categorias</h2>
+<h2>Listar Categorias</h2>
         
    <table class="table">
             <thead>
@@ -33,6 +27,3 @@
         
         
         <a href="./produto/adicionar">Voltar ao Cadastro do Produto</a>
-        
-    </body>
-</html>

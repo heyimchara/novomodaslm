@@ -1,10 +1,4 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <h2>Listar Clientes</h2>
+<h2>Listar Clientes</h2>
         
    <table class="table">
             <thead>
@@ -29,6 +23,3 @@
    </table> 
         <br>
         <a href="./cliente/cadastro" class="btn btn-primary">Novo Cliente</a>       
-        
-    </body>
-</html>

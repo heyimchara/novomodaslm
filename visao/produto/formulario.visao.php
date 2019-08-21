@@ -1,10 +1,4 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <h2>Cadastrar Produto</h2>
+<h2>Cadastrar Produto</h2>
         <form action="" method="POST">
             Nome: <input type="text" name="nome" value="<?=@$produto['nome']?>"><br><br>
             Descricao: <input type="text" name="descricao" value="<?=@$produto['descricao']?>"><br><br>
@@ -33,5 +27,3 @@
             
             <a href="./categoria/adicionarCategoria">Cadastrar Categoria</a>
         </form>
-    </body>
-</html>

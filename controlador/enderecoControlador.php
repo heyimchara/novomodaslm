@@ -65,14 +65,14 @@ function deletar($idEndereco){
 function editar($idEndereco){
      if (ehPost()){
       $logradouro = $_POST["logradouro"];
-        $numero = $_POST["numero"];
-        $complemento = $_POST["complemento"];
-        $bairro = $_POST["bairro"];
-        $cidade = $_POST["cidade"];
-        $cep = $_POST["cep"];
+      $numero = $_POST["numero"];
+      $complemento = $_POST["complemento"];
+      $bairro = $_POST["bairro"];
+      $cidade = $_POST["cidade"];
+      $cep = $_POST["cep"];
         
-        editarEndereco($logradouro,$numero,$complemento, $bairro,$cidade,$cep);
-       redirecionar("endereco/listarEndrecos");
+      editarEndereco($idEndereco,$logradouro,$numero,$complemento, $bairro,$cidade,$cep);
+      redirecionar("endereco/listarEndrecos");
 } else{
     $dados["endereco"] = pegarEnderecoPorId($idEndereco);
     exibir("endereco/formulario", $dados);
